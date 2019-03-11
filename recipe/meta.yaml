@@ -13,7 +13,7 @@ source:
 
 build:
   noarch:     python
-  number:     1
+  number:     2
   script:     python -m pip install --no-deps --ignore-installed .
   osx_is_app: True
   entry_points:
@@ -24,12 +24,13 @@ requirements:
   build:
     - python
     - pip
-    - sphinx 1.6.*
-    - sphinx_rtd_theme 0.*
-    - mock 2.*
+    - sphinx
+    - sphinx_rtd_theme
+    - mock
 
   run:
     - python
+    - python.app  # [osx]
     - deprecation >=1.*
     - fslpy >=1.13.2
     - fsleyes-props >=1.6.2
@@ -72,6 +73,13 @@ test:
   commands:
     - fsleyes -V
     - fsleyes -h
+
+
+app:
+  entry: fsleyes
+  summary: The FSL image viewer
+  type: desk
+  logo: logo.png
 
 about:
   home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/
