@@ -10,6 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - logging.patch
 
 build:
   noarch:     python
@@ -49,7 +51,6 @@ requirements:
     - wxpython >4
     - xnat >=0.3.3
     - wxnatpy >=0.3.0
-  run_constrained:
     - indexed_gzip >=0.7
     - ipykernel
     - ipython
@@ -57,7 +58,7 @@ requirements:
     - notebook
     - pyzmq
     - tornado
-    - dcm2niix 1.0.20180622
+    - dcm2niix
 
 test:
   imports:
