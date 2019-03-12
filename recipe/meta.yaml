@@ -15,11 +15,11 @@ source:
 
 build:
   number:     2
-  script:     python -m pip install --no-deps --ignore-installed .
   osx_is_app: True
   entry_points:
     - render  = fsleyes.render:main
     - fsleyes = fsleyes.main:main
+
 
 requirements:
   build:
