@@ -14,7 +14,6 @@ source:
     - logging.patch
 
 build:
-  noarch:     python
   number:     2
   script:     python -m pip install --no-deps --ignore-installed .
   osx_is_app: True
@@ -75,12 +74,11 @@ test:
     - fsleyes -V
     - fsleyes -h
 
-
 app:
   entry: fsleyes
   summary: The FSL image viewer
   type: desk
-  logo: logo.png
+  icon: logo.png
 
 about:
   home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/

@@ -1,5 +1,5 @@
 diff --git a/fsleyes/__init__.py b/fsleyes/__init__.py
-index 06329108..cfc65341 100644
+index 06329108..dde55da3 100644
 --- a/fsleyes/__init__.py
 +++ b/fsleyes/__init__.py
 @@ -214,7 +214,7 @@ log = None
@@ -11,6 +11,15 @@ index 06329108..cfc65341 100644
  
  
  __version__ = version.__version__
+@@ -381,7 +381,7 @@ def configLogging(verbose=0, noisy=None):
+     logging.getLogger('traitlets').setLevel(logging.CRITICAL)
+ 
+     # Show deprecations if running from code
+-    if fslplatform.frozen:
++    if True:
+         warnings.filterwarnings('ignore', category=DeprecationWarning)
+     else:
+         warnings.filterwarnings('default', category=DeprecationWarning)
 diff --git a/fsleyes/gl/__init__.py b/fsleyes/gl/__init__.py
 index fe3251d6..21328d5f 100644
 --- a/fsleyes/gl/__init__.py
