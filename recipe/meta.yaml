@@ -30,7 +30,7 @@ requirements:
     - mock
 
   run:
-    - python
+    - python >=3.5
     - python.app  # [osx]
     - deprecation >=1
     - fslpy >=1.13.2
@@ -43,7 +43,7 @@ requirements:
     - pillow >=3.2.0
     - pyopengl >=3.1.0
     - pyparsing 2
-    - scipy
+    - scipy >=0.18
     - six 1
     - trimesh >=2.22.28
     - rtree 0.8.3
