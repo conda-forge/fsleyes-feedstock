@@ -15,6 +15,7 @@ source:
 
 build:
   number:     2
+  skip:       True  # [py27]
   osx_is_app: True
   entry_points:
     - render  = fsleyes.render:main
