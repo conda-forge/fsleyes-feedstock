@@ -25,7 +25,6 @@ requirements:
   host:
     - python
     - pip
-  build:
     - sphinx
     - sphinx_rtd_theme
     - mock
