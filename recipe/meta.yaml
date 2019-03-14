@@ -22,32 +22,32 @@ build:
 
 
 requirements:
-  build:
+  host:
     - python
     - pip
+  build:
     - sphinx
     - sphinx_rtd_theme
     - mock
-
   run:
-    - python >=3.5
+    - python
     - python.app  # [osx]
     - deprecation >=1
     - fslpy >=1.13.2
     - fsleyes-props >=1.6.2
     - fsleyes-widgets >=0.6
-    - jinja2 2
+    - jinja2 2.*
     - matplotlib >=1.5
-    - nibabel 2
-    - numpy 1
+    - nibabel 2.*
+    - numpy >=1.11
     - pillow >=3.2.0
     - pyopengl >=3.1.0
-    - pyparsing 2
+    - pyparsing 2.*
     - scipy >=0.18
-    - six 1
+    - six 1.*
     - trimesh >=2.22.28
-    - rtree 0.8.3
-    - wxpython >4
+    - rtree 0.8.3.*
+    - wxpython >=4
     - xnat >=0.3.3
     - wxnatpy >=0.3.0
     - indexed_gzip >=0.7
