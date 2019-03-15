@@ -10,45 +10,46 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - logging.patch
 
 build:
-  noarch:     python
-  number:     1
-  script:     python -m pip install --no-deps --ignore-installed .
+  number:     2
+  skip:       True  # [py27]
   osx_is_app: True
   entry_points:
     - render  = fsleyes.render:main
     - fsleyes = fsleyes.main:main
 
+
 requirements:
-  build:
+  host:
     - python
     - pip
-    - sphinx 1.6.*
-    - sphinx_rtd_theme 0.*
-    - mock 2.*
-
+    - sphinx
+    - sphinx_rtd_theme
+    - mock
   run:
     - python
-    - deprecation >=1.*
+    - python.app  # [osx]
+    - deprecation >=1
     - fslpy >=1.13.2
     - fsleyes-props >=1.6.2
     - fsleyes-widgets >=0.6
     - jinja2 2.*
     - matplotlib >=1.5
     - nibabel 2.*
-    - numpy 1.*
+    - numpy >=1.11
     - pillow >=3.2.0
     - pyopengl >=3.1.0
     - pyparsing 2.*
     - scipy >=0.18
     - six 1.*
     - trimesh >=2.22.28
-    - rtree 0.8.3
-    - wxpython >4
+    - rtree 0.8.3.*
+    - wxpython >=4
     - xnat >=0.3.3
     - wxnatpy >=0.3.0
-  run_constrained:
     - indexed_gzip >=0.7
     - ipykernel
     - ipython
@@ -56,7 +57,7 @@ requirements:
     - notebook
     - pyzmq
     - tornado
-    - dcm2niix 1.0.20180622
+    - dcm2niix
 
 test:
   imports:
@@ -72,6 +73,12 @@ test:
   commands:
     - fsleyes -V
     - fsleyes -h
+
+app:
+  entry: fsleyes
+  summary: The FSL image viewer
+  type: desk
+  icon: logo.png
 
 about:
   home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/
