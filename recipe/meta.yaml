@@ -11,6 +11,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
+    - setup.patch
     - logging.patch
 
 build:
@@ -26,8 +27,8 @@ requirements:
   host:
     - python
     - pip
-    - sphinx 1.6.*
-    - sphinx_rtd_theme 0.*
+    - sphinx
+    - sphinx_rtd_theme
     - mock
   run:
     - python
