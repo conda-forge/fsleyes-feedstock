@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "0.28.0" %}
-{% set sha256 = "535726008cb40c507fe78b4d2dd7c53318f68f2a8327fb1e08a80ba14742d2e0" %}
+{% set version = "0.28.1" %}
+{% set sha256 = "579259a9a799fac8d55127d5c68300fd310170df92f2827c015401dde77b6914" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
     - logging.patch
 
 build:
-  number:     1
+  number:     0
   skip:       True  # [py27]
   osx_is_app: True
   entry_points:
