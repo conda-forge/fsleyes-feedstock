@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "0.28.1" %}
-{% set sha256 = "579259a9a799fac8d55127d5c68300fd310170df92f2827c015401dde77b6914" %}
+{% set version = "0.28.2" %}
+{% set sha256 = "b161310e9cdf4baeec0aa4767973e4822f30f3f075eacef619823d5abd31c2d3" %}
 
 package:
   name: {{ name|lower }}
@@ -32,7 +32,7 @@ requirements:
   run:
     - python
     - python.app  # [osx]
-    - fslpy >=2
+    - fslpy >=2.1
     - fsleyes-props >=1.6.2
     - fsleyes-widgets >=0.6
     - jinja2 2.*
@@ -44,7 +44,7 @@ requirements:
     - pyparsing 2.*
     - scipy >=0.18
     - six 1.*
-    - trimesh >=2.22.28
+    - trimesh >=2.37.29
     - rtree 0.8.3.*
     - wxpython >=4
     - xnat >=0.3.3
@@ -56,7 +56,7 @@ requirements:
     - notebook >=5.5
     - pyzmq >=17.0
     - tornado >=5.0
-    - dcm2niix >=1.0.20181114
+    - dcm2niix 1.0.20181114
 
 test:
   imports:
