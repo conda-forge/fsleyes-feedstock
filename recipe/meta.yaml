@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "0.29.0" %}
-{% set sha256 = "44ab93d837b479b45b7d81d7a6a9c622f0999cdcd72abff18f430370c6122a91" %}
+{% set version = "0.30.0" %}
+{% set sha256 = "51c2c9cfda000425732a30d4ae598e27874522d8b22b6961f297b5a3303052fa" %}
 
 package:
   name: {{ name|lower }}
@@ -18,8 +18,9 @@ build:
   skip:       True  # [py27]
   osx_is_app: True
   entry_points:
-    - render  = fsleyes.render:main
-    - fsleyes = fsleyes.main:main
+    - render             = fsleyes.render:main
+    - fsleyes            = fsleyes.main:main
+    - fsleyes_unfiltered = fsleyes.filtermain:main
 
 
 requirements:
@@ -32,7 +33,7 @@ requirements:
   run:
     - python
     - python.app  # [osx]
-    - fslpy >=2.2
+    - fslpy >=2.3
     - fsleyes-props >=1.6.2
     - fsleyes-widgets >=0.6
     - jinja2 2.*
