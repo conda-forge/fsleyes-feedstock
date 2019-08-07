@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "0.30.0" %}
-{% set sha256 = "51c2c9cfda000425732a30d4ae598e27874522d8b22b6961f297b5a3303052fa" %}
+{% set version = "0.30.1" %}
+{% set sha256 = "ff862287df8831012c0a83765b287d6bd442bbc2341ca82e9a937f7e7a6b7342" %}
 
 package:
   name: {{ name|lower }}
@@ -33,7 +33,7 @@ requirements:
   run:
     - python
     - python.app  # [osx]
-    - fslpy >=2.3
+    - fslpy >=2.4
     - fsleyes-props >=1.6.2
     - fsleyes-widgets >=0.6
     - jinja2 2.*
