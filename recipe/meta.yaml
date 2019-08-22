@@ -33,6 +33,7 @@ requirements:
   run:
     - python
     - python.app  # [osx]
+    - tk !=8.6.9  # [osx]
     - fslpy >=2.4
     - fsleyes-props >=1.6.2
     - fsleyes-widgets >=0.6
