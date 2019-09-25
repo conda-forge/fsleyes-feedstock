@@ -15,13 +15,13 @@ source:
     - logging.patch
 
 build:
-  number:     0
+  number:     1
   skip:       True  # [py27]
   osx_is_app: True
   entry_points:
     - render             = fsleyes.render:main
-    - fsleyes            = fsleyes.main:main
-    - fsleyes_unfiltered = fsleyes.filtermain:main
+    - fsleyes_unfiltered = fsleyes.main:main
+    - fsleyes            = fsleyes.filtermain:main
 
 
 requirements:
