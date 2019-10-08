@@ -15,7 +15,7 @@ source:
     - logging.patch
 
 build:
-  number:     1
+  number:     2
   skip:       True  # [py27]
   osx_is_app: True
   entry_points:
@@ -35,6 +35,7 @@ requirements:
     - python
     - python.app  # [osx]
     - tk !=8.6.9  # [osx]
+    - freeglut    # [linux or win]
     - fslpy >=2.6
     - fsleyes-props >=1.6.2
     - fsleyes-widgets >=0.8
