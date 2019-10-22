@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "0.31.1" %}
-{% set sha256 = "f18b157525073a288ecbfba85be3e9f22b6fe654913a4a7220c172b2fda6efd0" %}
+{% set version = "0.31.2" %}
+{% set sha256 = "b109c5e6ec03debaeb89b1c90f0f90c76fde3a45cca17e69c1d66716d0c1e2f6" %}
 
 package:
   name: {{ name|lower }}
@@ -36,9 +36,9 @@ requirements:
     - python.app  # [osx]
     - tk !=8.6.9  # [osx]
     - freeglut    # [linux or win]
-    - fslpy >=2.6
-    - fsleyes-props >=1.6.2
-    - fsleyes-widgets >=0.8
+    - fslpy >=2.6.2
+    - fsleyes-props >=1.6.7
+    - fsleyes-widgets >=0.8.4
     - jinja2 2.*
     - matplotlib >=1.5
     - nibabel >=2.3
