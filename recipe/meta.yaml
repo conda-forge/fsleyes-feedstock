@@ -1,21 +1,18 @@
-{% set name = "fsleyes" %}
 {% set version = "0.32.0" %}
-{% set sha256 = "6fb129c530bd74220a3f5cc3a83124d6c01b3b022a7ff2a09b03721f8a1d9241" %}
 
 package:
-  name: {{ name|lower }}
+  name: fsleyes
   version: {{ version }}
 
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
+  sha256: 6fb129c530bd74220a3f5cc3a83124d6c01b3b022a7ff2a09b03721f8a1d9241
   patches:
     - logging.patch
 
 build:
-  number: 0
+  number: 1
   skip:       True  # [py27]
   osx_is_app: True
   entry_points:
@@ -40,7 +37,7 @@ requirements:
     - fsleyes-props >=1.6.7
     - fsleyes-widgets >=0.8.4
     - jinja2 2.*
-    - matplotlib >=1.5
+    - matplotlib-base >=1.5
     - nibabel >=2.3
     - numpy >=1.14
     - pillow >=3.2.0
