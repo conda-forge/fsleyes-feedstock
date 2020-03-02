@@ -1,4 +1,4 @@
-{% set version = "0.32.2" %}
+{% set version = "0.32.3" %}
 
 package:
   name: fsleyes
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
-  sha256: 93649c46515c9c0c7ef433be22b17850c0ca4646c7ad4ecea7cb9edf45662dfa
+  sha256: 9fd5cb142be394547192d8fc16f5558f4b3f24998ea4a1bfd3b9bf486742f49a
   patches:
     - logging.patch
 
 build:
   number: 0
-  skip:       True  # [py27]
-  osx_is_app: True
+  skip: true  # [py27]
+  osx_is_app: true
   entry_points:
     - render             = fsleyes.render:main
     - fsleyes_unfiltered = fsleyes.main:main
@@ -85,7 +85,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'The FSL image viewer'
+  summary: The FSL image viewer
   dev_url: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/
 
 extra:
