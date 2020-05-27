@@ -1,4 +1,4 @@
-{% set version = "0.32.3" %}
+{% set version = "0.33.0" %}
 
 package:
   name: fsleyes
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
-  sha256: 9fd5cb142be394547192d8fc16f5558f4b3f24998ea4a1bfd3b9bf486742f49a
+  sha256: 55e847c7092625cffe51fa1d96a069adf4513bd88ef52c89ffb34153af570e2e
   patches:
     - logging.patch
 
 build:
   number: 0
-  skip: true  # [py27]
+  skip: true  # [py<37]
   osx_is_app: true
   entry_points:
     - render             = fsleyes.render:main
@@ -22,7 +22,7 @@ build:
 
 
 requirements:
-  host:
+  build:
     - python
     - pip
     - sphinx >=1.7
@@ -33,7 +33,7 @@ requirements:
     - python.app  # [osx]
     - tk !=8.6.9  # [osx]
     - freeglut    # [linux or win]
-    - fslpy >=2.8
+    - fslpy >=3.1
     - fsleyes-props >=1.6.7
     - fsleyes-widgets >=0.8.4
     - jinja2 2.*
