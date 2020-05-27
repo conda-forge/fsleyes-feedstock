@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py27]
+  skip: true  # [py<37]
   osx_is_app: true
   entry_points:
     - render             = fsleyes.render:main
@@ -29,7 +29,7 @@ requirements:
     - sphinx_rtd_theme
     - mock
   run:
-    - python >=3.7
+    - python
     - python.app  # [osx]
     - tk !=8.6.9  # [osx]
     - freeglut    # [linux or win]
