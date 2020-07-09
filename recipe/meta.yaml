@@ -30,12 +30,12 @@ requirements:
     - mock
   run:
     - python
-    - python.app             # [osx]
-    - tk !=8.6.9             # [osx]
-    - appnope                # [osx]
-    - pyobjc-core            # [osx]
-    - pyobjc-framework-Cocoa # [osx]
-    - freeglut               # [linux or win]
+    - python.app              # [osx]
+    - tk !=8.6.9              # [osx]
+    - appnope                 # [osx]
+    - pyobjc-core             # [osx]
+    - pyobjc-framework-Cocoa  # [osx]
+    - freeglut                # [linux or win]
     - fslpy >=3.1
     - fsleyes-props >=1.6.7
     - fsleyes-widgets >=0.8.4
