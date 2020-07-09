@@ -11,13 +11,14 @@
     <key>CFBundleIconFile</key>              <string>fsleyes.icns</string>
     <key>CFBundleIdentifier</key>            <string>uk.ac.ox.fmrib.fsleyes</string>
     <key>CFBundlePackageType</key>           <string>APPL</string>
-    <key>CFBundleShortVersionString</key>    <string>0.27.3</string>
-    <key>CFBundleVersion</key>               <string>0.27.3</string>
-    <key>NSHumanReadableCopyright</key>      <string>todo</string>
+    <key>CFBundleShortVersionString</key>    <string>##VERSION##</string>
+    <key>CFBundleVersion</key>               <string>##VERSION##</string>
+    <key>NSHumanReadableCopyright</key>      <string>##COPYRIGHT##</string>
 
     <key>LSMinimumSystemVersion</key>        <string>10.7.5</string>
     <key>LSBackgroundOnly</key>              <string>0</string>
     <key>NSHighResolutionCapable</key>       <true/>
+    <key>NSRequiresAquaSystemAppearance</key> <false/>
 
     <key>CFBundleURLTypes</key>
     <array>
