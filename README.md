@@ -5,7 +5,7 @@ Home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: The FSL image viewer
 
