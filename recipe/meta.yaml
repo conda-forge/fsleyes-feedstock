@@ -1,4 +1,4 @@
-{% set version = "0.33.2" %}
+{% set version = "0.34.0" %}
 
 package:
   name: fsleyes
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
-  sha256: 689d0b81dcd582c292d1cae1c974b5c44a8982058d554ab66e5a2ba402810794
+  sha256: 012aa1724a294801bfa1875c3f6960a815a85c9cbb3510a0a1a96450a81f1b07
   patches:
     - logging.patch
 
