@@ -10,9 +10,10 @@ source:
   sha256: 338cae02b11cc62f63ea895f8f6001a81c11c176f1ed4e613ecc6941815a5047
   patches:
     - logging.patch
+    - opengl.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
   osx_is_app: true
   entry_points:
