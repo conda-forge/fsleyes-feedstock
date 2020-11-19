@@ -1,36 +1,37 @@
 diff --git a/fsleyes/gl/__init__.py b/fsleyes/gl/__init__.py
-index 85b08bbf..0603b4d7 100644
+index 85b08bbf..63e4fe52 100644
 --- a/fsleyes/gl/__init__.py
 +++ b/fsleyes/gl/__init__.py
-@@ -179,13 +179,27 @@ been created.
+@@ -179,6 +179,7 @@ been created.
  
  import os
  import logging
 +import ctypes.util as ctypes_util
  import platform
-+import functools as ft
-+import contextlib as ctxlib
-+from   unittest import mock
  
  import fsl.utils.idle                     as idle
- from   fsl.utils.platform import platform as fslplatform
+@@ -186,6 +187,20 @@ from   fsl.utils.platform import platform as fslplatform
  import fsleyes_widgets                    as fwidgets
  
  
 +
 +real_find_library = ctypes_util.find_library
++
++
 +def find_library(name):
 +    if platform.system() == 'Darwin' and name in ('OpenGL', 'GLUT'):
 +        return f'/System/Library/Frameworks/{name}.framework/{name}'
 +    else:
 +        return real_find_library(name)
++
++
 +ctypes_util.find_library = find_library
 +
 +
  log = logging.getLogger(__name__)
  
  
-@@ -386,6 +400,7 @@ def bootstrap(glVersion=None):
+@@ -386,6 +401,7 @@ def bootstrap(glVersion=None):
      #       means (e.g. xvfb-run).
  
      import OpenGL.GLUT as GLUT
