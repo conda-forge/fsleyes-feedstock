@@ -13,7 +13,7 @@ source:
     - opengl.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<37]
   osx_is_app: true
   entry_points:
@@ -23,7 +23,7 @@ build:
 
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - sphinx >=1.7
