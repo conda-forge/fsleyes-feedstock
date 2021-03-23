@@ -13,7 +13,7 @@ source:
     - opengl.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<37]
   osx_is_app: true
   entry_points:
@@ -61,7 +61,7 @@ requirements:
     - notebook >=5.5
     - pyzmq >=17.0
     - tornado >=5.0
-    - dcm2niix 1.0.20181114
+    - dcm2niix >=1.0.20181114
 
 test:
   imports:
