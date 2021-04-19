@@ -1,20 +1,21 @@
-{% set version = "0.34.2" %}
+{% set name = "fsleyes" %}
+{% set version = "1.0.0" %}
+{% set sha256 = "9425032a18d99a2bbe234efaba5ae12081888c7228da58724396d5219d90d5ec" %}
 
 package:
-  name: fsleyes
+  name: {{ name }}
   version: {{ version }}
 
 
 source:
   url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
-  sha256: 338cae02b11cc62f63ea895f8f6001a81c11c176f1ed4e613ecc6941815a5047
+  sha256: {{ sha256 }}
   patches:
     - logging.patch
     - opengl.patch
 
 build:
-  number: 2
-  skip: true  # [py<37]
+  number: 0
   osx_is_app: true
   entry_points:
     - render             = fsleyes.render:main
@@ -23,23 +24,24 @@ build:
 
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.7
     - pip
     - sphinx >=1.7
     - sphinx_rtd_theme
     - mock
   run:
-    - python
+    - python >=3.7
     - python.app              # [osx]
     - tk !=8.6.9              # [osx]
     - appnope                 # [osx]
     - pyobjc-core             # [osx]
     - pyobjc-framework-Cocoa  # [osx]
-    - freeglut                # [linux or win]
-    - fslpy >=3.1
-    - fsleyes-props >=1.6.7
-    - fsleyes-widgets >=0.8.4
+    - fslpy >=3.6
+    - fsleyes-props >=1.7,2
+    - fsleyes-widgets >=0.11.3
+    - file-tree >=0.3.5
+    - file-tree-fsl >=0.1.5
     - jinja2 2.*
     - matplotlib-base >=1.5
     - nibabel >=2.3
@@ -48,7 +50,6 @@ requirements:
     - pyopengl >=3.1.0
     - pyparsing 2.*
     - scipy >=0.18
-    - six 1.*
     - trimesh >=2.37.29
     - rtree >=0.8.3.*
     - wxpython >=4
@@ -57,21 +58,22 @@ requirements:
     - indexed_gzip >=0.7
     - ipykernel >=4.8
     - ipython >=5
-    - jupyter_client >=5.2
-    - notebook >=5.5
-    - pyzmq >=17.0
-    - tornado >=5.0
+    - jupyter_client >=5.3.1
+    - notebook >=6
+    - pyzmq >=17
+    - tornado >=5
     - dcm2niix >=1.0.20181114
 
 test:
   imports:
     - fsleyes
     - fsleyes.actions
+    - fsleyes.controls
     - fsleyes.displaycontext
     - fsleyes.editor
     - fsleyes.gl
-    - fsleyes.controls
     - fsleyes.plotting
+    - fsleyes.plugins
     - fsleyes.profiles
     - fsleyes.views
   commands:
