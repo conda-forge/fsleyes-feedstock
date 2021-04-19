@@ -38,9 +38,9 @@ requirements:
     - appnope                 # [osx]
     - pyobjc-core             # [osx]
     - pyobjc-framework-Cocoa  # [osx]
-    - mesalib
+    - mesalib                 # [osx or linux]
     - fslpy >=3.6
-    - fsleyes-props >=1.7,2
+    - fsleyes-props >=1.7.2
     - fsleyes-widgets >=0.11.3
     - file-tree >=0.3.5
     - file-tree-fsl >=0.1.5
