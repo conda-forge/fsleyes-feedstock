@@ -16,6 +16,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [py<37]
   osx_is_app: true
   entry_points:
     - render             = fsleyes.render:main
@@ -25,18 +26,19 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
     - sphinx >=1.7
     - sphinx_rtd_theme
     - mock
   run:
-    - python >=3.7
+    - python
     - python.app              # [osx]
     - tk !=8.6.9              # [osx]
     - appnope                 # [osx]
     - pyobjc-core             # [osx]
     - pyobjc-framework-Cocoa  # [osx]
+    - mesalib
     - fslpy >=3.6
     - fsleyes-props >=1.7,2
     - fsleyes-widgets >=0.11.3
