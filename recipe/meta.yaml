@@ -79,12 +79,12 @@ test:
     - fsleyes.plugins
     - fsleyes.profiles
     - fsleyes.views
-  source_files:
-    - fsleyes/assets/icons/app_icon.png
+#   source_files:
+#     - fsleyes/assets/icons/app_icon.png
   commands:
     - fsleyes -V
     - fsleyes -h
-    - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png  # [osx]
+#     - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png  # [osx]
 
 app:
   entry: fsleyes
