@@ -67,6 +67,8 @@ requirements:
     - dcm2niix >=1.0.20181114
 
 test:
+  source_files:
+    - fsleyes/assets/icons/app_icon.png
   imports:
     - fsleyes
     - fsleyes.actions
@@ -81,6 +83,7 @@ test:
   commands:
     - fsleyes -V
     - fsleyes -h
+    - fsleyes render -of out.png app_icon.png  # [osx or linux]
 
 app:
   entry: fsleyes
