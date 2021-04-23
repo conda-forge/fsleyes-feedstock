@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.0.2" %}
-{% set sha256 = "954531f09365a2f2ed0e8bb6f28d5f085a486526487f6b72904915d70b00e418" %}
+{% set version = "1.0.3" %}
+{% set sha256 = "dddffb87b078528d36445238d979f12bb5ea5a13536a84d0f99dafb6e382c7c6" %}
 
 package:
   name: {{ name }}
@@ -33,12 +33,13 @@ requirements:
     - mock
   run:
     - python
-    - python.app              # [osx]
-    - tk !=8.6.9              # [osx]
-    - appnope                 # [osx]
-    - pyobjc-core             # [osx]
-    - pyobjc-framework-Cocoa  # [osx]
-    - mesalib                 # [osx or linux]
+    - python.app                     # [osx]
+    - tk !=8.6.9                     # [osx]
+    - appnope                        # [osx]
+    - pyobjc-core                    # [osx]
+    - pyobjc-framework-Cocoa         # [osx]
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - mesalib                        # [linux]
     - fslpy >=3.6
     - fsleyes-props >=1.7.2
     - fsleyes-widgets >=0.11.3
@@ -78,9 +79,12 @@ test:
     - fsleyes.plugins
     - fsleyes.profiles
     - fsleyes.views
+#   source_files:
+#     - fsleyes/assets/icons/app_icon.png
   commands:
     - fsleyes -V
     - fsleyes -h
+#     - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png  # [osx]
 
 app:
   entry: fsleyes
