@@ -15,7 +15,7 @@ source:
     - opengl.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
   osx_is_app: true
   entry_points:
@@ -33,13 +33,12 @@ requirements:
     - mock
   run:
     - python
-    - python.app                     # [osx]
-    - tk !=8.6.9                     # [osx]
-    - appnope                        # [osx]
-    - pyobjc-core                    # [osx]
-    - pyobjc-framework-Cocoa         # [osx]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - mesalib                        # [linux]
+    - python.app              # [osx]
+    - tk !=8.6.9              # [osx]
+    - appnope                 # [osx]
+    - pyobjc-core             # [osx]
+    - pyobjc-framework-Cocoa  # [osx]
+    - mesalib                 # [linux]
     - fslpy >=3.6
     - fsleyes-props >=1.7.2
     - fsleyes-widgets >=0.11.3
@@ -55,7 +54,7 @@ requirements:
     - scipy >=0.18
     - trimesh >=2.37.29
     - rtree >=0.8.3.*
-    - wxpython >=4
+    - wxpython >=4.1
     - xnat >=0.3.3
     - wxnatpy >=0.3.0
     - indexed_gzip >=0.7
