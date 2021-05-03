@@ -33,13 +33,12 @@ requirements:
     - mock
   run:
     - python
-    - python.app                     # [osx]
-    - tk !=8.6.9                     # [osx]
-    - appnope                        # [osx]
-    - pyobjc-core                    # [osx]
-    - pyobjc-framework-Cocoa         # [osx]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - mesalib                        # [linux]
+    - python.app              # [osx]
+    - tk !=8.6.9              # [osx]
+    - appnope                 # [osx]
+    - pyobjc-core             # [osx]
+    - pyobjc-framework-Cocoa  # [osx]
+    - mesalib                 # [linux]
     - fslpy >=3.6
     - fsleyes-props >=1.7.2
     - fsleyes-widgets >=0.11.3
