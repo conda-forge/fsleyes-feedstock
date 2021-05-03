@@ -15,7 +15,7 @@ source:
     - opengl.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
   osx_is_app: true
   entry_points:
@@ -55,7 +55,7 @@ requirements:
     - scipy >=0.18
     - trimesh >=2.37.29
     - rtree >=0.8.3.*
-    - wxpython >=4
+    - wxpython >=4.1
     - xnat >=0.3.3
     - wxnatpy >=0.3.0
     - indexed_gzip >=0.7
