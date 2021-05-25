@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.0.5" %}
-{% set sha256 = "0247edc186dbc04458a0bf957f9bd0e357ed11dd1c5ad9d26a32f50b2fed10d9" %}
+{% set version = "1.0.7" %}
+{% set sha256 = "fc42515a872211a9134b59d36f5c5f2585acc4f4177d889c709c64f99353fd2d" %}
 
 package:
   name: {{ name }}
@@ -41,7 +41,7 @@ requirements:
     - mesalib                 # [linux]
     - fslpy >=3.6
     - fsleyes-props >=1.7.2
-    - fsleyes-widgets >=0.11.3
+    - fsleyes-widgets >=0.12
     - file-tree >=0.3.5
     - file-tree-fsl >=0.1.5
     - jinja2 2.*
@@ -54,7 +54,7 @@ requirements:
     - scipy >=0.18
     - trimesh >=2.37.29
     - rtree >=0.8.3.*
-    - wxpython >=4.1
+    - wxpython >=4.0
     - xnat >=0.3.3
     - wxnatpy >=0.3.0
     - indexed_gzip >=0.7
