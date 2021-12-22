@@ -81,7 +81,7 @@ test:
   commands:
     - fsleyes -V
     - fsleyes -h
-    - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png  # [osx]
+    - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png
 
 app:
   entry: fsleyes
