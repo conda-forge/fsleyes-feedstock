@@ -36,9 +36,7 @@ requirements:
     - python.app              # [osx]
     - tk !=8.6.9              # [osx]
     - appnope                 # [osx]
-    - pyobjc-core             # [osx]
-    - pyobjc-framework-Cocoa  # [osx]
-    - mesalib 18.*            # [linux]
+    - mesalib                 # [linux]
     - fslpy >=3.6
     - fsleyes-props >=1.7.2
     - fsleyes-widgets >=0.12
@@ -78,12 +76,12 @@ test:
     - fsleyes.plugins
     - fsleyes.profiles
     - fsleyes.views
-#   source_files:
-#     - fsleyes/assets/icons/app_icon.png
+  source_files:
+    - fsleyes/assets/icons/app_icon.png
   commands:
     - fsleyes -V
     - fsleyes -h
-#     - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png  # [osx]
+    - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png  # [osx]
 
 app:
   entry: fsleyes
