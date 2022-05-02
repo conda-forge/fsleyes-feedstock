@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.3.3" %}
-{% set sha256 = "cc26ed271c11df48978139a451ce85c9baeaa8765e0dbe33d0407cb0e5bd5d51" %}
+{% set version = "1.4.0" %}
+{% set sha256 = "1346ef9648bc68394574d4260fab2285edf80f7b3bb81b76671b400d32173616" %}
 
 package:
   name: {{ name }}
@@ -38,9 +38,9 @@ requirements:
     - tk !=8.6.9              # [osx]
     - appnope                 # [osx]
     - mesalib                 # [linux]
-    - fslpy >=3.6
+    - fslpy >=3.9
     - fsleyes-props >=1.7.2
-    - fsleyes-widgets >=0.12
+    - fsleyes-widgets >=0.12.3
     - file-tree >=0.3.5
     - file-tree-fsl >=0.1.5
     - jinja2 >=2
