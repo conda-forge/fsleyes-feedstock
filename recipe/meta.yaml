@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.4.2" %}
-{% set sha256 = "836bdc51501487c068f1b78abc8ea69d1eac56604ad5febd310366b894930c61" %}
+{% set version = "1.4.4" %}
+{% set sha256 = "5718722a260e11a088fc377d4856d6e6f196de9a9c83b2fc366c9c30e810f4bf" %}
 
 package:
   name: {{ name }}
