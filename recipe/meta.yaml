@@ -25,13 +25,13 @@ build:
 
 
 requirements:
-  host:
-    - python >=3.7
-    - pip
   build:
     - sphinx >=1.7
     - sphinx_rtd_theme
     - mock
+  host:
+    - python >=3.7
+    - pip
   run:
     - __{{ noarch_platform }}
     - python >=3.7
