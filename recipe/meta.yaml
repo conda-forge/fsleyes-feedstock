@@ -15,8 +15,8 @@ source:
     - opengl.patch
 
 build:
-  number: 0
-  skip: true  # [py<37]
+  number: 1
+  noarch: python
   osx_is_app: true
   entry_points:
     - render             = fsleyes.render:main
@@ -25,21 +25,24 @@ build:
 
 
 requirements:
+  host:
+    - python >=3.7
+    - pip
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - sphinx >=1.7
     - sphinx_rtd_theme
     - mock
-  host:
-    - python
-    - pip
   run:
-    - python
-    - python.app              # [osx]
-    - tk !=8.6.9              # [osx]
-    - appnope                 # [osx]
-    - mesalib                 # [linux]
+    - __{{ noarch_platform }}
+    - python >=3.7
+    {% if noarch_platform == "osx" %}
+    - python.app
+    - tk !=8.6.9
+    - appnope
+    {% endif %}
+    {% if noarch_platform == "linux" %}
+    - mesalib
+    {% endif %}
     - fslpy >=3.9
     - fsleyes-props >=1.8
     - fsleyes-widgets >=0.12.3
