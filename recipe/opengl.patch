@@ -8,25 +8,26 @@ index f98fe084..adc06e93 100644
  import logging
 +import ctypes.util as ctypes_util
  import platform
- 
+
  import fsl.utils.idle                     as idle
-@@ -195,6 +196,19 @@ from   fsl.utils.platform import platform as fslplatform
+@@ -195,6 +196,22 @@ from   fsl.utils.platform import platform as fslplatform
  import fsleyes_widgets                    as fwidgets
- 
- 
+
+
 +real_find_library = ctypes_util.find_library
 +
 +
 +def find_library(name):
-+    if platform.system() == 'Darwin' and name in ('OpenGL', 'GLUT'):
++    if name in ('OpenGL', 'GLUT'):
 +        return f'/System/Library/Frameworks/{name}.framework/{name}'
 +    else:
 +        return real_find_library(name)
 +
 +
-+ctypes_util.find_library = find_library
++# Big sur support was added in Python 3.8.10 / 3.9.1
++pyver = sys.version_info[:3]
++if platform.system() == 'Darwin' and ((pyver < (3, 8, 10)) or pyver == (3, 9, 0)):
++    ctypes_util.find_library = find_library
 +
 +
  log = logging.getLogger(__name__)
- 
- 
