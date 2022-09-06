@@ -10,7 +10,7 @@ index f98fe084..adc06e93 100644
  import platform
 
  import fsl.utils.idle                     as idle
-@@ -195,6 +196,22 @@ from   fsl.utils.platform import platform as fslplatform
+@@ -195,4 +196,28 @@ from   fsl.utils.platform import platform as fslplatform
  import fsleyes_widgets                    as fwidgets
 
 
@@ -28,6 +28,14 @@ index f98fe084..adc06e93 100644
 +pyver = sys.version_info[:3]
 +if platform.system() == 'Darwin' and ((pyver < (3, 8, 10)) or pyver == (3, 9, 0)):
 +    ctypes_util.find_library = find_library
++
++
++# Allow execution from non-framework pythons
++# https://github.com/wxWidgets/Phoenix/issues/2250
++# https://github.com/wxWidgets/Phoenix/pull/2252
++if platform.system() == 'Darwin':
++    import wx
++    wx.PyApp.IsDisplayAvailable = lambda *_: True
 +
 +
  log = logging.getLogger(__name__)

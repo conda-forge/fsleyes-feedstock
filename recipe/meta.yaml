@@ -87,7 +87,11 @@ test:
   commands:
     - fsleyes -V
     - fsleyes -h
-    - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png  # [linux]
+    # The conda-forge CI Windows
+    # env does not have OpenGL
+    {% if noarch_platform != "win" %}
+    - fsleyes render -of out.png fsleyes/assets/icons/app_icon.png
+    {% endif %}
 
 app:
   entry: fsleyes
