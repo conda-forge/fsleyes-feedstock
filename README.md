@@ -1,11 +1,11 @@
-About fsleyes
-=============
+About fsleyes-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fsleyes-feedstock/blob/main/LICENSE.txt)
 
 Home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fsleyes-feedstock/blob/main/LICENSE.txt)
 
 Summary: The FSL image viewer
 
