@@ -15,7 +15,7 @@ source:
     - opengl.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   osx_is_app: true
   entry_points:
