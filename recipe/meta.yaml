@@ -15,7 +15,7 @@ source:
     - opengl.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   osx_is_app: true
   entry_points:
@@ -43,13 +43,13 @@ requirements:
     {% if noarch_platform == "linux" %}
     - mesalib
     {% endif %}
-    - fslpy >=3.9
+    - fslpy >=3.13
     - fsleyes-props >=1.8
-    - fsleyes-widgets >=0.12.3
+    - fsleyes-widgets >=0.14
     - file-tree >=0.3.5
     - file-tree-fsl >=0.1.5
     - jinja2 >=2
-    - matplotlib-base >=1.5
+    - matplotlib-base >=3.5
     - nibabel >=2.3
     - numpy >=1.14
     - pillow >=3.2.0
