@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.8.3" %}
-{% set sha256 = "9f95844d6ee9ba71d2abeab51ea02fcb31a5c655bd848d4eb937f3f9e765e9c0" %}
+{% set version = "1.9.0" %}
+{% set sha256 = "c35a4f34df6480ce90d3dd570204f4e0265621ad2b274207027164e6c5413a2a" %}
 
 package:
   name: {{ name }}
@@ -30,11 +30,11 @@ requirements:
     - sphinx_rtd_theme
     - mock
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
   run:
     - __{{ noarch_platform }}
-    - python >=3.7
+    - python >=3.8
     {% if noarch_platform == "osx" %}
     - python.app
     - tk !=8.6.9
@@ -43,8 +43,8 @@ requirements:
     {% if noarch_platform == "linux" %}
     - mesalib
     {% endif %}
-    - fslpy >=3.13.2
-    - fsleyes-props >=1.10
+    - fslpy >=3.15
+    - fsleyes-props >=1.11
     - fsleyes-widgets >=0.14
     - file-tree >=0.3.5
     - file-tree-fsl >=0.1.5
