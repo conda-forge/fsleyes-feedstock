@@ -15,7 +15,7 @@ source:
     - opengl.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   osx_is_app: true
   entry_points:
@@ -39,9 +39,6 @@ requirements:
     - python.app
     - tk !=8.6.9
     - appnope ==0.1.*
-    {% endif %}
-    {% if noarch_platform == "linux" %}
-    - mesalib
     {% endif %}
     - fslpy >=3.15
     - fsleyes-props >=1.11
@@ -71,6 +68,11 @@ requirements:
     - dcm2niix >=1.0.20181114
 
 test:
+  # need osmesa on linux
+  {% if noarch_platform == "linux" %}
+  requires:
+    - mesalib
+  {% endif %}
   imports:
     - fsleyes
     - fsleyes.actions
