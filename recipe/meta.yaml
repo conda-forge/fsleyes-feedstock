@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.9.0" %}
-{% set sha256 = "c35a4f34df6480ce90d3dd570204f4e0265621ad2b274207027164e6c5413a2a" %}
+{% set version = "1.10.0" %}
+{% set sha256 = "5561f6b608bad107e548f2e096c80ff7593621670fe100e1a67df79de8cfde22" %}
 
 package:
   name: {{ name }}
@@ -15,7 +15,7 @@ source:
     - opengl.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   osx_is_app: true
   entry_points:
