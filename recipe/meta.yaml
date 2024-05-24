@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.12.0" %}
-{% set sha256 = "3e0b2ee9e791e42f8c98cd339b849e048227d4bbe56156d3acd4f4e6090ec65d" %}
+{% set version = "1.12.1" %}
+{% set sha256 = "b33a20747b629800a0091e45a37b738a72b3d74bf696d479255fd296fc95bda3" %}
 
 package:
   name: {{ name }}
@@ -11,6 +11,7 @@ source:
   url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
+    - gdk_backend.patch
     - logging.patch
     - opengl.patch
 
@@ -40,7 +41,7 @@ requirements:
     - tk !=8.6.9
     - appnope ==0.1.*
     {% endif %}
-    - fslpy >=3.15
+    - fslpy >=3.19
     - fsleyes-props >=1.11
     - fsleyes-widgets >=0.14
     - file-tree >=0.3.5
