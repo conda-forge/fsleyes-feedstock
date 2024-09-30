@@ -33,6 +33,7 @@ requirements:
   host:
     - python >=3.8
     - pip
+    - setuptools
   run:
     - __{{ noarch_platform }}
     - python >=3.8
