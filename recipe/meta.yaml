@@ -57,7 +57,8 @@ requirements:
     - scipy >=0.18
     - trimesh >=2.37.29
     - rtree >=0.8.3
-    - wxpython >=4.0
+    - wxpython 4.2.1
+    - wxwidgets 3.2.5
     - xnat >=0.3.3
     - wxnatpy >=0.4.0
     - indexed_gzip >=0.7
