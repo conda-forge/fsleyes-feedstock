@@ -1,0 +1,20 @@
+diff --git a/fsleyes/__init__.py b/fsleyes/__init__.py
+index 2c277cfe..4f7f44df 100644
+--- a/fsleyes/__init__.py
++++ b/fsleyes/__init__.py
+@@ -203,6 +203,15 @@ import            os
+ import            sys
+ import            logging
+ import            warnings
++import            platform
++
++if platform.system() == 'Linux':
++    sharedir = op.join(op.dirname(sys.executable), '..', 'share')
++    xdgdirs  = os.environ.get('XDG_DATA_DIRS', '')
++    xdgdirs  = op.pathsep.join((sharedir, xdgdirs))
++
++    os.environ['GDK_BACKEND']   = 'x11'
++    os.environ['XDG_DATA_DIRS'] = xdgdirs
+ 
+ import fsl.utils.settings as fslsettings
+ import fsl.version        as fslversion

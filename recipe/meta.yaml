@@ -11,12 +11,29 @@ source:
   url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - gdk_backend.patch
+
+    # Set GDK_BACKEND=x11, as the conda-forge
+    # wxwidgets package is built to use GLX
+    # and not EGL for OpenGL interaction
+    #
+    # Add $PREFFIX/share/ to XDG_DATA_DIRS,
+    # as this may not otherwise be found if
+    # if XDG_DATA_DIRS is set on the host
+    # platform.
+    - envvars.patch
+
+    # Disable/suppress logging, and disable
+    # OpenGL error checking
     - logging.patch
+
+    # Make sure the OpenGL libs can be found
+    # on macOS, and allow execution of GUI
+    # aps from non-framework python
+    # installations.
     - opengl.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
   osx_is_app: true
   entry_points:
