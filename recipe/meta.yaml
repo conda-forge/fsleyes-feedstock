@@ -1,6 +1,7 @@
 {% set name = "fsleyes" %}
 {% set version = "1.14.1" %}
 {% set sha256 = "7ac73dfbe946fd2f16c4d4ac85073514f422da7b6986625f17fe3bb1379aeb7c" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name }}
@@ -48,12 +49,12 @@ requirements:
     - sphinx_rtd_theme
     - mock
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
     - __{{ noarch_platform }}
-    - python >=3.8
+    - python >={{ python_min }}
     {% if noarch_platform == "osx" %}
     - python.app
     - tk !=8.6.9
@@ -91,6 +92,7 @@ test:
   {% if noarch_platform == "linux" %}
   requires:
     - mesalib
+    - python {{ python_min }}
   {% endif %}
   imports:
     - fsleyes
