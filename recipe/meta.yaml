@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.13.0" %}
-{% set sha256 = "d14b5cd56c5529e3ac6f06b88225bde88d77b0bb90beda393c37a82d38e2464c" %}
+{% set version = "1.14.1" %}
+{% set sha256 = "7ac73dfbe946fd2f16c4d4ac85073514f422da7b6986625f17fe3bb1379aeb7c" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 
 
 source:
-  url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
 
@@ -59,9 +59,9 @@ requirements:
     - tk !=8.6.9
     - appnope ==0.1.*
     {% endif %}
-    - fslpy >=3.19
+    - fslpy >=3.22
     - fsleyes-props >=1.12
-    - fsleyes-widgets >=0.14
+    - fsleyes-widgets >=0.15
     - file-tree >=0.3.5
     - file-tree-fsl >=0.1.5
     - jinja2 >=2
