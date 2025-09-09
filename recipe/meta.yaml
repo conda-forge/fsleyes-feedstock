@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.15.0" %}
-{% set sha256 = "e73f2ad85a627fcccd7308f732fa7b65763b48c4e6e2e65db2c52c27cc0d787f" %}
+{% set version = "1.16.0" %}
+{% set sha256 = "46d6c228bda59a126759f80167a54d41fa43cf041138c270de774f0f022bba89" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -52,6 +52,7 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
+    - setuptools-scm
   run:
     - __{{ noarch_platform }}
     - python >={{ python_min }}
