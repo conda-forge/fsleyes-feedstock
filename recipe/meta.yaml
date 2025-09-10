@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.16.0" %}
-{% set sha256 = "46d6c228bda59a126759f80167a54d41fa43cf041138c270de774f0f022bba89" %}
+{% set version = "1.16.1" %}
+{% set sha256 = "d20a74bd1b83f0dd18ee49bb4a36b3ca5edebee91bdb78686110cd3f2ebb5b88" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -89,12 +89,14 @@ requirements:
     - dcm2niix >=1.0.20181114
 
 test:
-  # need osmesa on linux
-  {% if noarch_platform == "linux" %}
+
   requires:
-    - mesalib
     - python {{ python_min }}
-  {% endif %}
+    # need osmesa on linux
+    {% if noarch_platform == "linux" %}
+    - mesalib
+    {% endif %}
+
   imports:
     - fsleyes
     - fsleyes.actions
