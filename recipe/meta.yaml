@@ -89,12 +89,14 @@ requirements:
     - dcm2niix >=1.0.20181114
 
 test:
-  # need osmesa on linux
-  {% if noarch_platform == "linux" %}
+
   requires:
-    - mesalib
     - python {{ python_min }}
-  {% endif %}
+    # need osmesa on linux
+    {% if noarch_platform == "linux" %}
+    - mesalib
+    {% endif %}
+
   imports:
     - fsleyes
     - fsleyes.actions
