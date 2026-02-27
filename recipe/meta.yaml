@@ -1,6 +1,6 @@
 {% set name = "fsleyes" %}
-{% set version = "1.16.3" %}
-{% set sha256 = "0c63774ce8eb3c46e92e170b9bcb965c9668a95831472b8a5f4e35f9794ce2ec" %}
+{% set version = "1.17.0" %}
+{% set sha256 = "2fbc1e421cf359bb520cdf475f3c3c8fc79b36c2c91b2f42a31bd5fcbbe4c29e" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -63,16 +63,16 @@ requirements:
     {% endif %}
     - fslpy >=3.22
     - fsleyes-props >=1.12
-    - fsleyes-widgets >=0.15
-    - file-tree >=0.3.5
-    - file-tree-fsl >=0.1.5
+    - fsleyes-widgets >=0.16
+    - file-tree
+    - file-tree-fsl
     - jinja2 >=2
     - matplotlib-base >=3.5
     - nibabel >=2.3
     - numpy >=1.14
     - pillow >=3.2.0
     - pyopengl >=3.1.0
-    - pyparsing >=2
+    - pyparsing >=3
     - scipy >=0.18
     - trimesh >=2.37.29
     - rtree >=0.8.3
