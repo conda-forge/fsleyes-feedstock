@@ -93,7 +93,7 @@ test:
     - python {{ python_min }}
     # need osmesa on linux
     {% if noarch_platform == "linux" %}
-    - mesalib
+    - mesalib 25.0.*
     {% endif %}
 
   imports:
