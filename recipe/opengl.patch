@@ -1,19 +1,19 @@
 diff --git a/fsleyes/gl/__init__.py b/fsleyes/gl/__init__.py
-index f98fe084..adc06e93 100644
+index e55fc7ce..1cae93a2 100644
 --- a/fsleyes/gl/__init__.py
 +++ b/fsleyes/gl/__init__.py
-@@ -187,6 +187,7 @@ been created.
+@@ -188,6 +188,7 @@ been created.
  import os
  import sys
  import logging
 +import ctypes.util as ctypes_util
  import platform
-
- import fsl.utils.idle                     as idle
-@@ -195,4 +196,20 @@ from   fsl.utils.platform import platform as fslplatform
- import fsleyes_widgets                    as fwidgets
-
-
+ 
+ from   fsl.utils                      import idle
+@@ -199,6 +200,22 @@ from   fsleyes.utils                  import lazyimport
+ import OpenGL  # noqa
+ 
+ 
 +real_find_library = ctypes_util.find_library
 +
 +
@@ -31,3 +31,5 @@ index f98fe084..adc06e93 100644
 +
 +
  log = logging.getLogger(__name__)
+ 
+ 
