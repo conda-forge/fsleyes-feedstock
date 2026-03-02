@@ -1,8 +1,8 @@
 diff --git a/fsleyes/__init__.py b/fsleyes/__init__.py
-index 585f60c0..2ba2eda1 100644
+index 3accc76f..e8e6e1b2 100644
 --- a/fsleyes/__init__.py
 +++ b/fsleyes/__init__.py
-@@ -214,7 +214,7 @@ log = None
+@@ -224,7 +224,7 @@ log = None
  
  
  # If set to True, logging will not be configured
@@ -12,10 +12,10 @@ index 585f60c0..2ba2eda1 100644
  
  __version__ = version.__version__
 diff --git a/fsleyes/gl/__init__.py b/fsleyes/gl/__init__.py
-index f98fe084..34b38cfb 100644
+index 55bc5c61..e55fc7ce 100644
 --- a/fsleyes/gl/__init__.py
 +++ b/fsleyes/gl/__init__.py
-@@ -208,8 +208,8 @@ OpenGL.ERROR_ON_COPY = True
+@@ -221,8 +221,8 @@ OpenGL.ERROR_ON_COPY = True
  
  # These flags should be set to True
  # for development, False for production
