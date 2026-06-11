@@ -33,7 +33,7 @@ source:
     - opengl.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   osx_is_app: true
   entry_points:
@@ -56,7 +56,6 @@ requirements:
     - __{{ noarch_platform }}
     - python >={{ python_min }}
     {% if noarch_platform == "osx" %}
-    - python.app
     - tk !=8.6.9
     - appnope ==0.1.*
     {% endif %}
