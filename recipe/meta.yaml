@@ -33,7 +33,7 @@ source:
     - opengl.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   osx_is_app: true
   entry_points:
@@ -56,36 +56,35 @@ requirements:
     - __{{ noarch_platform }}
     - python >={{ python_min }}
     {% if noarch_platform == "osx" %}
-    - python.app
     - tk !=8.6.9
     - appnope ==0.1.*
     {% endif %}
-    - fslpy >=3.22
-    - fsleyes-props >=1.12
-    - fsleyes-widgets >=0.16
+    - dcm2niix >=1.0.20181114
     - file-tree
     - file-tree-fsl
+    - fsleyes-props >=1.13
+    - fsleyes-widgets >=0.17
+    - fslpy >=3.22
+    - indexed_gzip >=0.7
+    - ipykernel >=4.8
+    - ipython >=5
     - jinja2 >=2
+    - jupyter_client >=5.3.1
     - matplotlib-base >=3.5
+    - nbclassic
     - nibabel >=2.3
     - numpy >=1.14
     - pillow >=3.2.0
     - pyopengl >=3.1.0
     - pyparsing >=3
-    - scipy >=0.18
-    - trimesh >=2.37.29
+    - pyzmq >=17
     - rtree >=0.8.3
+    - scipy >=0.18
+    - tornado >=5
+    - trimesh >=2.37.29
+    - wxnatpy >=0.4.0
     - wxpython >=4
     - xnat >=0.3.3
-    - wxnatpy >=0.4.0
-    - indexed_gzip >=0.7
-    - ipykernel >=4.8
-    - ipython >=5
-    - jupyter_client >=5.3.1
-    - nbclassic
-    - pyzmq >=17
-    - tornado >=5
-    - dcm2niix >=1.0.20181114
 
 test:
 
