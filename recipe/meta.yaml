@@ -1,7 +1,7 @@
 {% set name = "fsleyes" %}
-{% set version = "1.20.1" %}
+{% set version = "1.20.2" %}
 {% set python_min = "3.11" %}
-{% set sha256 = "eb646e4b3cd2e5e390b0153a78d9d2de5a5f8a2aade99e887603c4b00982b5c3" %}
+{% set sha256 = "b4edb1ae5940bfb059cb0db14e7b619a18dbb02e2328448fc373931d750ec8e0" %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ package:
 
 
 source:
-  url: https://pypi.org/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
 
@@ -34,7 +34,7 @@ source:
     - opengl.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   osx_is_app: true
   entry_points:
